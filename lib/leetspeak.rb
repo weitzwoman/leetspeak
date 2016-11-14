@@ -5,20 +5,17 @@ class String
     wordsArray = self.split()
     wordsArray.each() do |word|
       newString = ""
-      word.each_char() do |letter|
+      word.each_char.with_index() do |letter, index|
         if letter.eql?("e")
           newString<<("3")
         elsif letter.eql?("o")
           newString<<("0")
         elsif letter.eql?("I")
           newString<<("1")
-        elsif letter.eql?("s")
+        elsif letter.eql?("s") && index != 0
           newString<<("z")
         else newString<<(letter)
         end
-      end
-      if newString.start_with?("z")
-        newString[0] = "s"
       end
       newArray.push(newString)
     end
